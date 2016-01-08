@@ -75,6 +75,6 @@ $(window).on('load resize',function(){
 	windowH = $(window).height(),
 	amount = Math.floor(windowW/eyeW)*Math.floor(windowH/eyeW);
 	for(var i=0;i<amount-1;i++){
-		$eye.clone().addClass('clone').insertBefore($eye);
+		$eye.clone(true,true).addClass('clone').insertBefore($eye);
 	}
 });
