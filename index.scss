@@ -1,0 +1,56 @@
+$div: 100px;
+
+body{
+	background: #333;
+}
+div.eye{
+	display: block;
+	position: relative;
+	margin: $div * 0.1;
+	float: left;
+	width: $div;
+	height: $div;
+	background: #fefefe;
+	border-radius: 50%;
+	overflow: hidden;
+	box-shadow: 0px 0px 20px darken(#333,10%);
+	&::before{
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: 5;
+		background: radial-gradient(circle, transparent 10%, fade-out(#615441,0.5));
+	}
+	i{
+		display: block;
+		position: relative;
+		background: #482d1c;
+		width: $div*0.4;
+		height: $div*0.4;
+		border-radius: 50%;
+		top: calc(50% - #{$div*0.2});
+		left: calc(50% - #{$div*0.2});
+		box-shadow: 0px 0px 5px #482d1c;
+		&::before{
+			content: '';
+			position: absolute;
+			width: $div*0.2;
+			height: $div*0.2;
+			background: radial-gradient(circle, fade-out(#000,0.4) 5%, #000);
+			border-radius: 50%;
+			top: calc(50% - #{$div*0.1});
+			left: calc(50% - #{$div*0.1});
+		}
+		&::after{
+			content: '';
+			position: absolute;
+			width: $div*0.12;
+			height: $div*0.12;
+			background: fade-out(#fff,0.5);
+			border-radius: 50%;
+			top: calc(50% - #{$div*0.05});
+			left: calc(50% - #{$div*0.15});
+		}
+	}
+}
